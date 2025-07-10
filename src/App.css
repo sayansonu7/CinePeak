@@ -1,0 +1,105 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.pattern {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('/hero-bg.png');
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.movie-list .movie-card {
+    display: flex;
+    align-items: center; /* Vertically align items in the center */
+    margin-bottom: 1.5rem; /* Space between list items */
+    padding: 1rem;
+    background-color: #1a1a1a; /* A slightly different background for list items */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* A subtle shadow for depth */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.movie-list .movie-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.movie-list .movie-card img {
+    width: 100px; /* Fixed width for posters in list view */
+    height: auto; /* Let height adjust to maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 4px;
+    margin-right: 1.5rem; /* Space between poster and movie details */
+}
+
+.movie-list .movie-card .movie-details {
+    flex-grow: 1; /* Allow details to take up remaining space */
+    text-align: left; /* Align text to the left */
+}
+
+.movie-list .movie-card .movie-title {
+    font-size: 1.25rem; /* Larger font size for the title */
+    font-weight: bold;
+    color: #fff;
+    margin: 0 0 0.5rem 0; /* Margin below the title */
+}
+
+.movie-list .movie-card .movie-info {
+    font-size: 0.9rem; /* Smaller font size for info */
+    color: #fbf8f8; /* Lighter color for info text */
+    margin: 0;
+}
