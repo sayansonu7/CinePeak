@@ -1,4 +1,4 @@
-# CinePeak :clapper: :movie_camera:
+# CinePeak :clapper:
 
 ![CinePeak Banner](https://ibb.co/jvNdFtj7) <!-- Replace with an actual banner image URL if available -->
 
