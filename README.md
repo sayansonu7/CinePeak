@@ -1,6 +1,6 @@
 # CinePeak :clapper: :movie_camera:
 
-![CinePeak Banner](https://your-banner-image-url-here.com) <!-- Replace with an actual banner image URL if available -->
+![CinePeak Banner](https://ibb.co/jvNdFtj7) <!-- Replace with an actual banner image URL if available -->
 
 <p align="center">
   <a href="https://github.com/sayansonu7/CinePeak">
