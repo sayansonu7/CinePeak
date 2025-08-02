@@ -87,7 +87,7 @@ const App = () => {
       setIsLoading(true);
       setErrorMessage('');
       try {
-        if (!API_KEY) {
+        if (!API_KEY || API_KEY.trim() === '') {
           setErrorMessage('OMDB API Key is not configured.');
           return;
         }
