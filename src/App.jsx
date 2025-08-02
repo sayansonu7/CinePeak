@@ -10,7 +10,7 @@ import {updateSearchCount} from './appwrite.js';
 
 
 const API_BASE_URL = 'http://www.omdbapi.com';
-const API_KEY = import.meta.env.VITE_OMDB_API_KEY || '';
+const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
 const popularMovieIds = [
 'tt0111161',  // The Shawshank Redemption
@@ -87,7 +87,7 @@ const App = () => {
       setIsLoading(true);
       setErrorMessage('');
       try {
-        if (!API_KEY || API_KEY.trim() === '') {
+        if (!API_KEY || API_KEY.trim() === '' || API_KEY === 'undefined') {
           setErrorMessage('OMDB API Key is not configured.');
           return;
         }
@@ -96,7 +96,10 @@ const App = () => {
           try {
             const response = await fetch(endpoint);
             if (!response.ok) {
-              console.warn(`Failed to fetch popular movie with ID ${id}: ${response.statusText}`);
+              if (response.status === 401) {
+                throw new Error('Invalid API key. Please check your OMDB API key.');
+              }
+              console.warn(`Failed to fetch popular movie with ID ${id}: ${response.status} ${response.statusText}`);
               return null;
             }
             const data = await response.json();
@@ -134,13 +137,16 @@ const App = () => {
       setErrorMessage('');
       setMovieList([]);
       try {
-        if (!API_KEY) {
+        if (!API_KEY || API_KEY.trim() === '' || API_KEY === 'undefined') {
           setErrorMessage('OMDB API Key is not configured.');
           return;
         }
         const endpoint = `${API_BASE_URL}/?s=${encodeURIComponent(query)}&apikey=${API_KEY}`;
         const response = await fetch(endpoint);
         if (!response.ok) {
+          if (response.status === 401) {
+            throw new Error('Invalid API key. Please check your OMDB API key.');
+          }
           throw new Error(`Failed to fetch movies from search: ${response.statusText}`);
         }
         const data = await response.json();
