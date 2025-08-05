@@ -10,14 +10,30 @@ import { updateSearchCount } from "./appwrite.js";
 const API_BASE_URL = "https://www.omdbapi.com";
 const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
-
 const popularMovieIds = [
+  "tt32857110", // Bohurupi
+  "tt5180504", // Avatar: The Way of Water
+  "tt5083738", // Superman
+  "tt10954652", // Mickey 17
+  "tt10954653", // The Fantastic Four: First Steps
+  "tt10954654", // F1: The Movie
+  "tt10954655", // Jurassic World: Rebirth
+  "tt1838556", // Sinners
+  "tt1838557", // Companion
+
+  "tt1838561", // Saiyaara
+
+  "tt1838564", // Chhaava
+  "tt1838565", // Housefull 5
+  "tt1838566", // Sky Force
+  "tt1838567", // Mayanagar
+  "tt1745960", // Ballerina
+  "tt10872610", // 28 Years Later
   "tt0111161", // The Shawshank Redemption
   "tt0068646", // The Godfather
   "tt0468569", // The Dark Knight
   "tt0071562", // The Godfather: Part II
   "tt0050083", // 12 Angry Men
-  "tt0108052", // Schindler's List
   "tt1375666", // Inception
   "tt0120737", // The Lord of the Rings: The Fellowship of the Ring
   "tt0167261", // The Lord of the Rings: The Two Towers
@@ -30,9 +46,6 @@ const popularMovieIds = [
   "tt0172495", // Gladiator
   "tt0047396", // Rear Window
   "tt1675434", // The Intouchables
-  "tt2582802", // Whiplash
-  "tt0076759", // Star Wars: Episode IV - A New Hope
-  "tt0095765", // Cinema Paradiso
   "tt8108198", // Andhadhun
   "tt26343188", // 12th Fail
   "tt15097216", // Jai Bhim
@@ -43,14 +56,11 @@ const popularMovieIds = [
   "tt4154796", // Avengers: Endgame
   "tt4633694", // Spider-Man: Into the Spider-Verse
   "tt6966692", // Green Book
-  "tt8267604", // Capernaum
+
   "tt4154756", // Avengers: Infinity War
-  "tt2380307", // Coco
-  "tt5027774", // Three Billboards Outside Ebbing, Missouri
-  "tt3315342", // Logan
+
   "tt1392190", // Mad Max: Fury Road
-  "tt2267998", // Gone Girl
-  "tt3011894", // Wild Tales
+
   "tt2278388", // The Grand Budapest Hotel
   "tt9362722", // Spider-Man: Across the Spider-Verse
   "tt1745960", // Top Gun: Maverick
@@ -85,8 +95,8 @@ const App = () => {
       setIsLoading(true);
       setErrorMessage("");
       try {
-        if (!API_KEY || API_KEY.trim() === '' || API_KEY === 'undefined') {
-          setErrorMessage('OMDB API Key is not configured.');
+        if (!API_KEY || API_KEY.trim() === "" || API_KEY === "undefined") {
+          setErrorMessage("OMDB API Key is not configured.");
           return;
         }
         const popularMoviesDataPromises = popularMovieIds.map(async (id) => {
@@ -95,9 +105,13 @@ const App = () => {
             const response = await fetch(endpoint);
             if (!response.ok) {
               if (response.status === 401) {
-                throw new Error('Invalid API key. Please check your OMDB API key.');
+                throw new Error(
+                  "Invalid API key. Please check your OMDB API key."
+                );
               }
-              console.warn(`Failed to fetch popular movie with ID ${id}: ${response.status} ${response.statusText}`);
+              console.warn(
+                `Failed to fetch popular movie with ID ${id}: ${response.status} ${response.statusText}`
+              );
               return null;
             }
             const data = await response.json();
@@ -141,8 +155,8 @@ const App = () => {
       setErrorMessage("");
       setMovieList([]);
       try {
-        if (!API_KEY || API_KEY.trim() === '' || API_KEY === 'undefined') {
-          setErrorMessage('OMDB API Key is not configured.');
+        if (!API_KEY || API_KEY.trim() === "" || API_KEY === "undefined") {
+          setErrorMessage("OMDB API Key is not configured.");
           return;
         }
         const endpoint = `${API_BASE_URL}/?s=${encodeURIComponent(
@@ -151,9 +165,11 @@ const App = () => {
         const response = await fetch(endpoint);
         if (!response.ok) {
           if (response.status === 401) {
-            throw new Error('Invalid API key. Please check your OMDB API key.');
+            throw new Error("Invalid API key. Please check your OMDB API key.");
           }
-          throw new Error(`Failed to fetch movies from search: ${response.statusText}`);
+          throw new Error(
+            `Failed to fetch movies from search: ${response.statusText}`
+          );
         }
         const data = await response.json();
         if (data.Response === "False") {
@@ -233,6 +249,10 @@ const App = () => {
         const ratingB = b.imdbRating === "N/A" ? -1 : parseFloat(b.imdbRating);
         return ratingB - ratingA;
       });
+    } else if (sortCriteria === "ascending") {
+      sorted.sort((a, b) => a.Title.localeCompare(b.Title));
+    } else if (sortCriteria === "descending") {
+      sorted.sort((a, b) => b.Title.localeCompare(a.Title));
     }
     return sorted;
   }, [movieList, allPopularMovies, sortCriteria, debouncedSearchTerm]);
@@ -309,8 +329,8 @@ const App = () => {
                             onClick={() => setViewMode("grid")}
                             className={`px-3 py-1 border rounded ${
                               viewMode === "grid"
-                                ? "bg-purple-700"
-                                : "bg-gray-700"
+                                ? "bg-purple-900"
+                                : "bg-gray-600"
                             } text-white`}
                           >
                             Grid
@@ -319,8 +339,8 @@ const App = () => {
                             onClick={() => setViewMode("list")}
                             className={`px-3 py-1 border rounded ${
                               viewMode === "list"
-                                ? "bg-purple-700"
-                                : "bg-gray-700"
+                                ? "bg-cyan-700"
+                                : "bg-gray-600"
                             } text-white ml-2`}
                           >
                             List
@@ -342,6 +362,8 @@ const App = () => {
                             <option value="default">Default</option>
                             <option value="date_desc">Newest First</option>
                             <option value="rating_desc">Highest Rating</option>
+                            <option value="ascending">Ascending</option>
+                            <option value="descending">Descending</option>
                           </select>
                         </div>
                       </div>
@@ -382,7 +404,7 @@ const App = () => {
                         <button
                           onClick={() => handlePageChange(currentPage - 1)}
                           disabled={currentPage === 1}
-                          className="px-4 py-2 bg-purple-700 text-white rounded disabled:bg-gray-400 hover:bg-purple-600 transition-colors"
+                          className="px-4 py-2 bg-purple-900 text-white rounded disabled:bg-gray-400 hover:bg-purple-700 transition-colors"
                         >
                           Previous
                         </button>
@@ -402,7 +424,7 @@ const App = () => {
                         <button
                           onClick={() => handlePageChange(currentPage + 1)}
                           disabled={currentPage === totalPages}
-                          className="px-4 py-2 bg-green-800 text-white rounded disabled:bg-gray-400 hover:bg-blue-600 transition-colors"
+                          className="px-4 py-2 bg-cyan-800 text-white rounded disabled:bg-gray-400 hover:bg-cyan-600 transition-colors"
                         >
                           Next
                         </button>
