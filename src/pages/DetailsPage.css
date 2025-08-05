@@ -2,7 +2,7 @@
 .details-page {
   min-height: 100vh;
   color: white;
-  animation: fadeIn 0.5s ease-out;
+  animation: fadeIn 1s ease-out;
 }
 
 /* Hero Section */
@@ -103,6 +103,17 @@
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+/* Add any component-specific styles here */
+
+.gradient-button-transition {
+  background: linear-gradient(to right, #3b82f6, #9333ea);
+  transition: all 0.3s ease-in-out;
+}
+
+.gradient-button-transition:hover {
+  background: linear-gradient(to right, #fbbf24, #ef4444);
 }
 
 /* Responsive Design */
