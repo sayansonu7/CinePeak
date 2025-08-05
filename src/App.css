@@ -64,7 +64,7 @@
 
 .movie-list .movie-card {
     display: flex;
-    align-items: center; /* Vertically align items in the center */
+    align-items:center; /* Vertically align items in the center */
     margin-bottom: 1.5rem; /* Space between list items */
     padding: 1rem;
     background-color: #1a1a1a; /* A slightly different background for list items */
@@ -74,32 +74,35 @@
 }
 
 .movie-list .movie-card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-10px); /* Lift effect on hover */
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
 .movie-list .movie-card img {
-    width: 100px; /* Fixed width for posters in list view */
-    height: auto; /* Let height adjust to maintain aspect ratio */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
+    width: 40px; /* Fixed width for posters in list view */
+    height: 60px; /* Fixed height for posters in list view */
+    object-fit: contain; /* Ensure the image covers the area without distortion */
     border-radius: 4px;
-    margin-right: 1.5rem; /* Space between poster and movie details */
+    margin-right: 0.5rem; /* Space between poster and movie details */
 }
 
 .movie-list .movie-card .movie-details {
     flex-grow: 1; /* Allow details to take up remaining space */
     text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .movie-list .movie-card .movie-title {
-    font-size: 1.25rem; /* Larger font size for the title */
+    font-size: 1rem; /* Smaller font size for the title */
     font-weight: bold;
     color: #fff;
-    margin: 0 0 0.5rem 0; /* Margin below the title */
+    margin: 0; /* Remove margin below the title */
 }
 
 .movie-list .movie-card .movie-info {
-    font-size: 0.9rem; /* Smaller font size for info */
+    font-size: 0.8rem; /* Even smaller font size for info */
     color: #fbf8f8; /* Lighter color for info text */
     margin: 0;
 }
