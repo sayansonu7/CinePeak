@@ -6,6 +6,14 @@ import Spinner from "./components/Spinner.jsx";
 import MovieCard from "./components/MovieCard.jsx";
 import DetailsPage from "./pages/DetailsPage.jsx";
 import { updateSearchCount } from "./appwrite.js";
+import { useEffect, useState, useMemo } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import useDebounce from "./hooks/useDebounce.js";
+import Search from "./components/Search.jsx";
+import Spinner from "./components/Spinner.jsx";
+import MovieCard from "./components/MovieCard.jsx";
+import DetailsPage from "./pages/DetailsPage.jsx";
+import { updateSearchCount } from "./appwrite.js";
 
 const API_BASE_URL = "https://www.omdbapi.com";
 const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
@@ -71,11 +79,16 @@ const MOVIES_PER_PAGE = 16;
 const App = () => {
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [movieList, setMovieList] = useState([]); // For search results
   const [allPopularMovies, setAllPopularMovies] = useState([]); // For all popular movies
   const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [sortCriteria, setSortCriteria] = useState("default"); // 'default', 'date_desc', 'rating_desc'
+  const [viewMode, setViewMode] = useState("grid"); // 'grid' or 'list'
   const [sortCriteria, setSortCriteria] = useState("default"); // 'default', 'date_desc', 'rating_desc'
   const [viewMode, setViewMode] = useState("grid"); // 'grid' or 'list'
 
@@ -90,6 +103,7 @@ const App = () => {
   useEffect(() => {
     const fetchAllPopularMovies = async () => {
       setIsLoading(true);
+      setErrorMessage("");
       setErrorMessage("");
       try {
         if (!API_KEY || API_KEY.trim() === "" || API_KEY === "undefined") {
@@ -113,8 +127,12 @@ const App = () => {
             }
             const data = await response.json();
             if (data.Response === "True") {
+            if (data.Response === "True") {
               return data;
             } else {
+              console.warn(
+                `OMDB API returned 'False' for popular movie ID ${id}: ${data.Error}`
+              );
               console.warn(
                 `OMDB API returned 'False' for popular movie ID ${id}: ${data.Error}`
               );
@@ -128,9 +146,15 @@ const App = () => {
         const popularMoviesData = (
           await Promise.all(popularMoviesDataPromises)
         ).filter((movie) => movie);
+        const popularMoviesData = (
+          await Promise.all(popularMoviesDataPromises)
+        ).filter((movie) => movie);
         setAllPopularMovies(popularMoviesData);
       } catch (error) {
         console.error(`Error fetching popular movies: ${error}`);
+        setErrorMessage(
+          `Error fetching popular movies: ${error.message}. Please try again later.`
+        );
         setErrorMessage(
           `Error fetching popular movies: ${error.message}. Please try again later.`
         );
@@ -150,12 +174,16 @@ const App = () => {
       }
       setIsLoading(true);
       setErrorMessage("");
+      setErrorMessage("");
       setMovieList([]);
       try {
         if (!API_KEY || API_KEY.trim() === "" || API_KEY === "undefined") {
           setErrorMessage("OMDB API Key is not configured.");
           return;
         }
+        const endpoint = `${API_BASE_URL}/?s=${encodeURIComponent(
+          query
+        )}&apikey=${API_KEY}`;
         const endpoint = `${API_BASE_URL}/?s=${encodeURIComponent(
           query
         )}&apikey=${API_KEY}`;
@@ -169,6 +197,8 @@ const App = () => {
           );
         }
         const data = await response.json();
+        if (data.Response === "False") {
+          setErrorMessage(data.Error || "No movies found for your search.");
         if (data.Response === "False") {
           setErrorMessage(data.Error || "No movies found for your search.");
           setMovieList([]);
@@ -209,15 +239,56 @@ const App = () => {
               }
             }
           );
+          const detailedMoviesPromises = data.Search.map(
+            async (searchResultMovie) => {
+              const detailEndpoint = `${API_BASE_URL}/?i=${searchResultMovie.imdbID}&apikey=${API_KEY}`;
+              try {
+                const detailResponse = await fetch(detailEndpoint);
+                if (!detailResponse.ok) {
+                  console.warn(
+                    `Failed to fetch details for movie ID ${searchResultMovie.imdbID}: ${detailResponse.statusText}`
+                  );
+                  return {
+                    ...searchResultMovie,
+                    imdbRating: "N/A",
+                    Language: "N/A",
+                  };
+                }
+                const detailData = await detailResponse.json();
+                return detailData.Response === "True"
+                  ? detailData
+                  : {
+                      ...searchResultMovie,
+                      imdbRating: "N/A",
+                      Language: "N/A",
+                    };
+              } catch (error) {
+                console.error(
+                  `Error fetching details for movie ID ${searchResultMovie.imdbID}:`,
+                  error
+                );
+                return {
+                  ...searchResultMovie,
+                  imdbRating: "N/A",
+                  Language: "N/A",
+                };
+              }
+            }
+          );
           const detailedMovies = await Promise.all(detailedMoviesPromises);
+          setMovieList(detailedMovies.filter((movie) => movie));
           setMovieList(detailedMovies.filter((movie) => movie));
           updateSearchCount();
         } else {
           setMovieList([]);
           setErrorMessage("No movies found for your search.");
+          setErrorMessage("No movies found for your search.");
         }
       } catch (error) {
         console.error(`Error fetching movies: ${error}`);
+        setErrorMessage(
+          `Error fetching movies: ${error.message}. Please try again later.`
+        );
         setErrorMessage(
           `Error fetching movies: ${error.message}. Please try again later.`
         );
@@ -233,6 +304,7 @@ const App = () => {
     const listToSort = debouncedSearchTerm ? movieList : allPopularMovies;
     let sorted = [...listToSort];
     if (sortCriteria === "date_desc") {
+    if (sortCriteria === "date_desc") {
       sorted.sort((a, b) => {
         const yearA = parseInt(a.Year, 10);
         const yearB = parseInt(b.Year, 10);
@@ -240,6 +312,7 @@ const App = () => {
         if (isNaN(yearB)) return -1;
         return yearB - yearA;
       });
+    } else if (sortCriteria === "rating_desc") {
     } else if (sortCriteria === "rating_desc") {
       sorted.sort((a, b) => {
         const ratingA = a.imdbRating === "N/A" ? -1 : parseFloat(a.imdbRating);
@@ -253,6 +326,10 @@ const App = () => {
     }
     return sorted;
   }, [movieList, allPopularMovies, sortCriteria, debouncedSearchTerm]);
+
+  const totalPages = debouncedSearchTerm
+    ? 1
+    : Math.ceil(sortedList.length / MOVIES_PER_PAGE);
 
   const totalPages = debouncedSearchTerm
     ? 1
@@ -440,3 +517,4 @@ const App = () => {
 };
 
 export default App;
+
