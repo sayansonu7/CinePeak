@@ -23,26 +23,28 @@
 CinePeak is a modern movie search application built with React, TypeScript, and Vite. It uses the OMDB API to fetch movie data, allowing users to search for movies by title and browse a list of popular movies on the home page. Whether you're looking for the latest blockbusters or hidden gems, CinePeak brings the world of cinema right to your fingertips! :popcorn:
 
 Key features include:
+
 - **Real-time Movie Search** :mag: – Search for movies and get instant results with details like posters, ratings, release years, and plots.
 - **Popular Movies List** :star: – A curated dashboard of trending and popular films on the home page.
 - **Responsive Design** :iphone: – Works seamlessly on desktops, tablets, and mobile devices.
 
 ## :gear: Tech Stack
 
-| Technology   | Description                          |
-|--------------|--------------------------------------|
-| **HTML/CSS/JS** | Core web technologies for structure, styling, and interactivity. |
-| **React** :atom: | JavaScript library for building user interfaces. |
-| **TypeScript** :blue_book: | Typed superset of JavaScript for safer code. |
-| **Vite** :zap: | Fast build tool and development server. |
-| **OMDB API** :film_projector: | External API for movie data retrieval. |
-| **Others** | Axios for API requests, React Router for navigation (based on repo analysis). |
+| Technology                    | Description                                                                   |
+| ----------------------------- | ----------------------------------------------------------------------------- |
+| **HTML/CSS/JS**               | Core web technologies for structure, styling, and interactivity.              |
+| **React** :atom:              | JavaScript library for building user interfaces.                              |
+| **TypeScript** :blue_book:    | Typed superset of JavaScript for safer code.                                  |
+| **Vite** :zap:                | Fast build tool and development server.                                       |
+| **OMDB API** :film_projector: | External API for movie data retrieval.                                        |
+| **Others**                    | Axios for API requests, React Router for navigation (based on repo analysis). |
 
 ## :rocket: Installation
 
 To get CinePeak running locally:
 
 1. **Prerequisites**:
+
    - Node.js (v14+)
    - npm or Yarn
 
@@ -51,6 +53,7 @@ To get CinePeak running locally:
 3. Install dependencies:
 
 4. Set up environment variables:
+
 - Create a `.env` file in the root directory.
 - Add your OMDB API key: `VITE_OMDB_API_KEY=your_api_key_here` (Get one from [OMDB API](https://www.omdbapi.com/)).
 

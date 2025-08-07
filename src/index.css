@@ -6,7 +6,11 @@
 .gradient-title {
   font-size: 3rem; /* Example size */
   font-weight: bold;
-  background: linear-gradient(to right, #007cf0, #00dfd8); /* Example blue-green gradient */
+  background: linear-gradient(
+    to right,
+    #007cf0,
+    #00dfd8
+  ); /* Example blue-green gradient */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -15,7 +19,7 @@
 }
 
 @theme {
-  --color-primary: #030014;
+  --color-primary: linear-gradient(135deg, #210f37, #09122c, #210f37);
 
   --color-light-100: #cecefb;
   --color-light-200: #a8b5db;
@@ -28,14 +32,14 @@
 
   --breakpoint-xs: 480px;
 
-  --background-image-hero-pattern: url("/hero-bg.png");
+  --background-image-hero-pattern: url("/hero-bg.PNG");
 }
 
 @layer base {
   body {
     font-family: "DM Sans", serif;
     font-optical-sizing: auto;
-    background: #030014;
+    background: var(--color-primary);
   }
 
   h1 {

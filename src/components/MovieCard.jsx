@@ -21,7 +21,7 @@ const MovieCard = ({ movie, viewMode = "grid" }) => {
     return (
       <div
         className="movie-card flex items-center gap-5 p-3 bg-[#1b162b] rounded-lg 
-                   hover:shadow-md hover:-translate-y-[2px] transition cursor-pointer"
+                   hover:shadow-md hover:translate-[-10px] transition-all duration-300 ease-in-out cursor-pointer"
         onClick={handleClick}
       >
         {/* small poster */}
@@ -36,8 +36,9 @@ const MovieCard = ({ movie, viewMode = "grid" }) => {
           <h3 className="movie-title text-sm font-bold text-white leading-snug">
             {title}
           </h3>
+          s{" "}
           <p className="movie-info text-xs text-gray-400 italic">
-            {release_date ? release_date.substring(0, 4) : "----"}
+            {release_date ? release_date.substring(0, 4) : "N/A"}
           </p>
         </div>
       </div>
@@ -49,19 +50,15 @@ const MovieCard = ({ movie, viewMode = "grid" }) => {
     <div
       onClick={handleClick}
       className="movie-card bg-gray-800 rounded-lg overflow-hidden shadow-lg
-                 hover:shadow-2xl transition-shadow duration-300 ease-in-out cursor-pointer"
+                 hover:shadow-2xl hover:translate-[10px] transition-all duration-300 ease-in-out cursor-pointer"
     >
-      <img
-        src={posterUrl}
-        alt={title}
-        className="w-full h-auto object-cover"
-      />
+      <img src={posterUrl} alt={title} className="w-full h-auto object-cover" />
       <div className="p-4">
         <h3 className="text-lg font-bold text-white">{title}</h3>
         <div className="flex justify-between items-center mt-2">
           <span
             className={`text-sm font-semibold ${
-              vote_average >= 7 ? "text-green-400" : "text-yellow-400"
+              vote_average >= 7 ? "text-purple-500" : "text-cyan-500"
             }`}
           >
             Rating: {vote_average ? vote_average.toFixed(1) : "N/A"}
@@ -70,7 +67,9 @@ const MovieCard = ({ movie, viewMode = "grid" }) => {
             {original_language?.toUpperCase() || "N/A"}
           </span>
         </div>
-        <p className="text-sm text-gray-300 mt-2">{release_date}</p>
+        <p className="text-sm text-gray-300 mt-2">
+          {release_date ? release_date.substring(0, 4) : "N/A"}
+        </p>
       </div>
     </div>
   );

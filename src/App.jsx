@@ -15,10 +15,7 @@ const popularMovieIds = [
   "tt5180504", // Avatar: The Way of Water
   "tt5083738", // Superman
   "tt10954652", // Mickey 17
-  "tt10954653", // The Fantastic Four: First Steps
-  "tt10954654", // F1: The Movie
-  "tt10954655", // Jurassic World: Rebirth
-  "tt1838556", // Sinners
+
   "tt1838557", // Companion
 
   "tt1838561", // Saiyaara
@@ -47,9 +44,9 @@ const popularMovieIds = [
   "tt0047396", // Rear Window
   "tt1675434", // The Intouchables
   "tt8108198", // Andhadhun
-  "tt26343188", // 12th Fail
+
   "tt15097216", // Jai Bhim
-  "tt27170900", // Laapataa Ladies
+
   "tt15699250", // Hanu Man
   "tt26548265", // Maharaja
 
@@ -291,14 +288,9 @@ const App = () => {
               <div className="pattern" />
               <div className="wrapper">
                 <header>
-                  <img
-                    src="/hero.png"
-                    alt="Hero Image"
-                    className="hero-image"
-                  />
                   <h1>
-                    Find <span className="text-gradient">Movies</span> You'll
-                    Enjoy Without the Hassle
+                    Discover Your Next 
+                    <span className="text-gradient"> Favorite Movie </span> in Seconds
                   </h1>
                   <Search
                     searchTerm={searchTerm}

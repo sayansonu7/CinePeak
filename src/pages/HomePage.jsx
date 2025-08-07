@@ -8,7 +8,7 @@ import DetailsPage from "./pages/DetailsPage.jsx";
 import { updateSearchCount } from "./appwrite.js";
 
 const HomePage = () => {
-  // ... All your existing state and logic here
+
 };
 
 const App = () => {
