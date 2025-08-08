@@ -47,7 +47,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("/hero-bg.PNG");
+  background-image: url("/hero-bg.png");
 
   background-size: cover;
   z-index: -1;

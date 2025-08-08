@@ -60,7 +60,7 @@ const popularMovieIds = [
 
   "tt2278388", // The Grand Budapest Hotel
   "tt9362722", // Spider-Man: Across the Spider-Verse
-  "tt1745960", // Top Gun: Maverick
+
   "tt10872600", // Spider-Man: No Way Home
   "tt15398776", // Oppenheimer
   "tt1300115", // The Dark Knight Rises
@@ -254,17 +254,37 @@ const App = () => {
     return sorted;
   }, [movieList, allPopularMovies, sortCriteria, debouncedSearchTerm]);
 
-  const totalPages = debouncedSearchTerm
-    ? 1
-    : Math.ceil(sortedList.length / MOVIES_PER_PAGE);
+  const totalPages = useMemo(() => {
+    if (debouncedSearchTerm) {
+      return 1;
+    }
+    const moviesWithPosters = sortedList.filter(
+      (movie) => movie.Poster && movie.Poster !== "N/A"
+    );
+    const moviesWithoutPosters = sortedList.filter(
+      (movie) => !movie.Poster || movie.Poster === "N/A"
+    );
+    const reorderedList = [...moviesWithPosters, ...moviesWithoutPosters];
+    return Math.ceil(reorderedList.length / MOVIES_PER_PAGE);
+  }, [sortedList, debouncedSearchTerm]);
 
   const paginatedList = useMemo(() => {
     if (debouncedSearchTerm) {
       return sortedList;
     }
+
+    const moviesWithPosters = sortedList.filter(
+      (movie) => movie.Poster && movie.Poster !== "N/A"
+    );
+    const moviesWithoutPosters = sortedList.filter(
+      (movie) => !movie.Poster || movie.Poster === "N/A"
+    );
+
+    const reorderedList = [...moviesWithPosters, ...moviesWithoutPosters];
+
     const startIndex = (currentPage - 1) * MOVIES_PER_PAGE;
     const endIndex = startIndex + MOVIES_PER_PAGE;
-    return sortedList.slice(startIndex, endIndex);
+    return reorderedList.slice(startIndex, endIndex);
   }, [sortedList, currentPage, debouncedSearchTerm]);
 
   const handlePageChange = (newPage) => {
@@ -289,8 +309,9 @@ const App = () => {
               <div className="wrapper">
                 <header>
                   <h1>
-                    Discover Your Next 
-                    <span className="text-gradient"> Favorite Movie </span> in Seconds
+                    Discover Your Next
+                    <span className="text-gradient"> Favorite Movie </span> in
+                    Seconds
                   </h1>
                   <Search
                     searchTerm={searchTerm}

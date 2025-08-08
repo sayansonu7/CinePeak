@@ -727,7 +727,7 @@ const DetailsPage = () => {
             {/* Cast Section */}
             <div className="bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm">
               <h2 className="text-xl font-semibold mb-6">Cast</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+              <div className="grid grid-cols-auto-fit-min-120 gap-6">
                 {movieDetails.Actors.split(", ").map((actor, index) => (
                   <div key={index} className="group text-center">
                     <a
