@@ -1,7 +1,7 @@
 # CinePeak - Movie Discovery Platform
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Roboto&size=40&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&multiline=true&width=600&height=100&lines=Welcome+to+CinePeak;Your+Movie+Discovery+Platform" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Roboto&size=40&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&multiline=true&width=600&height=100&lines=Welcome+to+CinePeak;" alt="Typing SVG" />
   <br><br>
   <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100">
 </div>
@@ -27,7 +27,7 @@
 
 ---
 
-<div align="center">
+<div align="center&color=800080">
 
 ## ABOUT CINEPEAK 
 
@@ -225,7 +225,7 @@ CinePeak/
 ```
 ---
 
-## ðŸ›¡ï¸ AVAILABLE SCRIPTS
+##  AVAILABLE SCRIPTS
 
 <div align="center">
 
@@ -316,8 +316,7 @@ This project is licensed under the **MIT License**
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Roboto&size=30&duration=3000&pause=1000&color=FF6B9D&center=true&vCenter=true&width=600&lines=Star+this+repo+if+you+like+it!;Happy+Movie+Hunting!" alt="Closing Typing SVG" />
 
-### Don't forget to give this project a star if you found it helpful! â­
-
+### Don't forget to give this project a star if you found it helpful! 
 <br>
 
 **Made with React for movie lovers everywhere!**
