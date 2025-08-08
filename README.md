@@ -27,7 +27,7 @@
 
 ---
 
-<div align="center&color=800080">
+<div align="center&color=E0B0FF">
 
 ## ABOUT CINEPEAK 
 
