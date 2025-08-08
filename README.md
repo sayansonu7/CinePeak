@@ -23,7 +23,7 @@
 
 <div align="center">
 
-## âœ¨ ABOUT CINEPEAK âœ¨
+## ABOUT CINEPEAK 
 
 *Your Gateway to Cinematic Excellence*
 
@@ -33,7 +33,7 @@
 <tr>
 <td align="center" width="50%">
 
-### ðŸŽ¯ What is CinePeak?
+### What is CinePeak?
 
 **CinePeak** is a cutting-edge movie discovery platform that brings the magic of cinema to your fingertips! Built with modern web technologies, it offers seamless movie search capabilities powered by the OMDB API.
 
@@ -54,7 +54,7 @@
 
 ---
 
-## ðŸ› ï¸ TECH STACK
+## TECH STACK
 
 <div align="center">
 
@@ -62,7 +62,7 @@
 <tr>
 <td align="center" width="33%">
 
-### ðŸŽ¨ Frontend
+###  Frontend
 <br>
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
 <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
@@ -72,7 +72,7 @@
 </td>
 <td align="center" width="33%">
 
-### âš¡ Build Tools
+### Build Tools
 <br>
 <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E">
 <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white">
@@ -82,7 +82,7 @@
 </td>
 <td align="center" width="33%">
 
-### ðŸ”Œ APIs & Routing
+### APIs & Routing
 <br>
 <img src="https://img.shields.io/badge/OMDB_API-FFD700?style=for-the-badge&logo=imdb&logoColor=black">
 <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white">
@@ -96,9 +96,9 @@
 
 ---
 
-## ðŸš€ QUICK START
+##  QUICK START
 
-### ðŸ“‹ Prerequisites
+### Prerequisites
 
 ```bash
 # Ensure you have these installed
@@ -106,7 +106,7 @@ node --version  # v14.0.0+
 npm --version   # v6.0.0+
 ```
 
-### âš¡ Installation
+### Installation
 
 ```bash
 # 1. Clone the repository
@@ -125,7 +125,7 @@ echo "VITE_OMDB_API_KEY=your_api_key_here" > .env
 npm run dev
 ```
 
-### ðŸ”‘ Get Your OMDB API Key
+### Get Your OMDB API Key
 
 1. Visit [OMDB API](http://www.omdbapi.com/apikey.aspx)
 2. Sign up for a free API key
@@ -140,19 +140,19 @@ npm run dev
 
 ---
 
-## ðŸŽ¯ USAGE GUIDE
+##  USAGE GUIDE
 
 <table>
 <tr>
 <td width="50%">
 
-### ðŸ” Search Movies
+### Search Movies
 1. Use the search bar at the top
 2. Type any movie title
 3. Get instant results with details
 4. Click on movies for more info
 
-### ðŸ“Š Browse Popular Movies  
+###  Browse Popular Movies  
 1. Scroll through the homepage
 2. Discover trending films
 3. View ratings and release years
@@ -161,13 +161,13 @@ npm run dev
 </td>
 <td width="50%">
 
-### ðŸ“± Mobile Experience
+###  Mobile Experience
 1. Fully responsive design
 2. Touch-friendly interface
 3. Optimized for all screen sizes
 4. Fast loading on mobile data
 
-### ðŸŽ¨ Visual Features
+### Visual Features
 1. Dark theme interface
 2. Smooth animations
 3. Modern card layouts
@@ -179,7 +179,7 @@ npm run dev
 
 ---
 
-## ðŸ“ PROJECT STRUCTURE
+## PROJECT STRUCTURE
 
 ```
 CinePeak/
