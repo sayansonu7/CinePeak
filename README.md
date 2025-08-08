@@ -1,25 +1,18 @@
-# ðŸŽ¬ CinePeak <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100">
+# CinePeak - Movie Discovery Platform
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=40&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&multiline=true&width=600&height=100&lines=ðŸŽ­+Welcome+to+CinePeak+ðŸŽ­;ðŸŒŸ+Your+Movie+Discovery+Platform+ðŸŒŸ" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Roboto&size=40&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&multiline=true&width=600&height=100&lines=Welcome+to+CinePeak;Your+Movie+Discovery+Platform" alt="Typing SVG" />
 </div>
 
 <div align="center">
   
-  <!-- Animated Stars -->
-  <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" width="50">
-  <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" width="50">
-  <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" width="50">
-  
-  <!-- Glass-morphic Badges -->
-  <img src="https://img.shields.io/badge/React-18.0-61DAFB?style=for-the-badge&logo=react&logoColor=white&labelColor=000000&color=00D4FF">
+  <img src="https://img.shields.io/badge/React-19.1-61DAFB?style=for-the-badge&logo=react&logoColor=white&labelColor=000000&color=00D4FF">
   <img src="https://img.shields.io/badge/TypeScript-5.8-3178C6?style=for-the-badge&logo=typescript&logoColor=white&labelColor=000000&color=FF6B9D">
   <img src="https://img.shields.io/badge/Vite-6.3-646CFF?style=for-the-badge&logo=vite&logoColor=white&labelColor=000000&color=C73E1D">
   <img src="https://img.shields.io/badge/TailwindCSS-4.1-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white&labelColor=000000&color=06B6D4">
   
   <br><br>
   
-  <!-- Social Links with Neon Effect -->
   [![GitHub Stars](https://img.shields.io/github/stars/sayansonu7/CinePeak?style=for-the-badge&logo=github&logoColor=white&labelColor=000000&color=00D4FF)](https://github.com/sayansonu7/CinePeak/stargazers)
   [![GitHub Forks](https://img.shields.io/github/forks/sayansonu7/CinePeak?style=for-the-badge&logo=github&logoColor=white&labelColor=000000&color=FF6B9D)](https://github.com/sayansonu7/CinePeak/network)
   [![GitHub Issues](https://img.shields.io/github/issues/sayansonu7/CinePeak?style=for-the-badge&logo=github&logoColor=white&labelColor=000000&color=FFC107)](https://github.com/sayansonu7/CinePeak/issues)
@@ -30,9 +23,9 @@
 
 <div align="center">
 
-## ðŸŒŸ **ABOUT CINEPEAK** ðŸŒŸ
+## âœ¨ ABOUT CINEPEAK âœ¨
 
-*<sub>Your Gateway to Cinematic Excellence</sub>*
+*Your Gateway to Cinematic Excellence*
 
 </div>
 
@@ -40,15 +33,15 @@
 <tr>
 <td align="center" width="50%">
 
-### ðŸŽ¯ **What is CinePeak?**
+### ðŸŽ¯ What is CinePeak?
 
 **CinePeak** is a cutting-edge movie discovery platform that brings the magic of cinema to your fingertips! Built with modern web technologies, it offers seamless movie search capabilities powered by the OMDB API.
 
-ðŸ”¥ **Key Features:**
+**Key Features:**
 - ðŸ” **Real-time Search** - Instant movie results
 - â­ **Popular Movies** - Curated trending films
 - ðŸ“± **Responsive Design** - Works on all devices
-- ðŸŽ¬ **Rich Details** - Ratings, plots, and cast info
+- ðŸ“„ **Rich Details** - Ratings, plots, and cast info
 
 </td>
 <td align="center" width="50%">
@@ -61,26 +54,15 @@
 
 ---
 
-## ðŸ› ï¸ **TECH STACK**
+## ðŸ› ï¸ TECH STACK
 
 <div align="center">
-
-```css
-/* Modern Glass-morphic Stack */
-.tech-stack {
-  backdrop-filter: blur(16px);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-```
 
 <table>
 <tr>
 <td align="center" width="33%">
 
-### ðŸŽ¨ **Frontend**
+### ðŸŽ¨ Frontend
 <br>
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
 <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
@@ -90,7 +72,7 @@
 </td>
 <td align="center" width="33%">
 
-### âš¡ **Build Tools**
+### âš¡ Build Tools
 <br>
 <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E">
 <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white">
@@ -100,7 +82,7 @@
 </td>
 <td align="center" width="33%">
 
-### ðŸ”Œ **APIs & Routing**
+### ðŸ”Œ APIs & Routing
 <br>
 <img src="https://img.shields.io/badge/OMDB_API-FFD700?style=for-the-badge&logo=imdb&logoColor=black">
 <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white">
@@ -114,13 +96,9 @@
 
 ---
 
-## ðŸš€ **QUICK START**
+## ðŸš€ QUICK START
 
-<div align="center">
-  <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="300">
-</div>
-
-### ðŸ“‹ **Prerequisites**
+### ðŸ“‹ Prerequisites
 
 ```bash
 # Ensure you have these installed
@@ -128,80 +106,53 @@ node --version  # v14.0.0+
 npm --version   # v6.0.0+
 ```
 
-### âš¡ **Lightning Fast Setup**
+### âš¡ Installation
 
 ```bash
-# 1ï¸âƒ£ Clone the repository
+# 1. Clone the repository
 git clone https://github.com/sayansonu7/CinePeak.git
 
-# 2ï¸âƒ£ Navigate to project directory  
+# 2. Navigate to project directory  
 cd CinePeak
 
-# 3ï¸âƒ£ Install dependencies
+# 3. Install dependencies
 npm install
 
-# 4ï¸âƒ£ Create environment file
+# 4. Create environment file
 echo "VITE_OMDB_API_KEY=your_api_key_here" > .env
 
-# 5ï¸âƒ£ Start the development server
+# 5. Start the development server
 npm run dev
 ```
 
-### ðŸŽ¬ **Get Your OMDB API Key**
+### ðŸ”‘ Get Your OMDB API Key
 
 1. Visit [OMDB API](http://www.omdbapi.com/apikey.aspx)
 2. Sign up for a free API key
 3. Add it to your `.env` file
-4. Start exploring movies! ðŸ¿
+4. Start exploring movies!
 
 <div align="center">
 
-**ðŸŒŸ Open [http://localhost:5173](http://localhost:5173) and witness the magic! ðŸŒŸ**
+**Open [http://localhost:5173](http://localhost:5173) and witness the magic!**
 
 </div>
 
 ---
 
-## ðŸ“¸ **SCREENSHOTS & FEATURES**
-
-<div align="center">
-
-### ðŸ  **Home Page - Popular Movies**
-*Discover trending movies with stunning visuals*
-
-<img src="https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif" width="600" alt="Popular Movies Demo">
-
----
-
-### ðŸ” **Search Functionality** 
-*Real-time search with instant results*
-
-<img src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" width="600" alt="Search Demo">
-
----
-
-### ðŸ“± **Responsive Design**
-*Perfect experience on all devices*
-
-<img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="600" alt="Responsive Demo">
-
-</div>
-
----
-
-## ðŸŽ¯ **USAGE GUIDE**
+## ðŸŽ¯ USAGE GUIDE
 
 <table>
 <tr>
 <td width="50%">
 
-### ðŸ” **Search Movies**
+### ðŸ” Search Movies
 1. Use the search bar at the top
 2. Type any movie title
 3. Get instant results with details
 4. Click on movies for more info
 
-### ðŸ“Š **Browse Popular Movies**  
+### ðŸ“Š Browse Popular Movies  
 1. Scroll through the homepage
 2. Discover trending films
 3. View ratings and release years
@@ -210,17 +161,17 @@ npm run dev
 </td>
 <td width="50%">
 
-### ðŸ“± **Mobile Experience**
+### ðŸ“± Mobile Experience
 1. Fully responsive design
 2. Touch-friendly interface
 3. Optimized for all screen sizes
 4. Fast loading on mobile data
 
-### ðŸŽ¨ **Visual Features**
+### ðŸŽ¨ Visual Features
 1. Dark theme interface
 2. Smooth animations
-3. Glass-morphic elements
-4. Modern card layouts
+3. Modern card layouts
+4. Clean user interface
 
 </td>
 </tr>
@@ -228,35 +179,35 @@ npm run dev
 
 ---
 
-## ðŸ—‚ï¸ **PROJECT STRUCTURE**
+## ðŸ“ PROJECT STRUCTURE
 
 ```
 CinePeak/
-â”œâ”€â”€ ðŸ“ public/
-â”‚   â”œâ”€â”€ ðŸ–¼ï¸ CinePeak-full.png
-â”‚   â”œâ”€â”€ ðŸŽ­ cinema.png
-â”‚   â””â”€â”€ ðŸ“± Various assets...
-â”œâ”€â”€ ðŸ“ src/
-â”‚   â”œâ”€â”€ ðŸ“ components/
-â”‚   â”‚   â”œâ”€â”€ ðŸŽ¬ MovieCard.tsx
-â”‚   â”‚   â”œâ”€â”€ ðŸ” Search.tsx
-â”‚   â”‚   â””â”€â”€ âš¡ Spinner.tsx
-â”‚   â”œâ”€â”€ ðŸ“ pages/
-â”‚   â”‚   â”œâ”€â”€ ðŸ  HomePage.jsx
-â”‚   â”‚   â””â”€â”€ ðŸ“„ DetailsPage.jsx
-â”‚   â”œâ”€â”€ ðŸ“ hooks/
-â”‚   â”‚   â””â”€â”€ â±ï¸ useDebounce.js
-â”‚   â”œâ”€â”€ ðŸŽ¨ App.css
-â”‚   â”œâ”€â”€ âš›ï¸ App.jsx
-â”‚   â””â”€â”€ ðŸš€ main.tsx
-â”œâ”€â”€ âš™ï¸ package.json
-â”œâ”€â”€ ðŸ”§ vite.config.ts
-â””â”€â”€ ðŸ“– README.md
+â”œâ”€â”€ public/
+â”‚   â”œâ”€â”€ CinePeak-full.png
+â”‚   â”œâ”€â”€ cinema.png
+â”‚   â””â”€â”€ Various assets...
+â”œâ”€â”€ src/
+â”‚   â”œâ”€â”€ components/
+â”‚   â”‚   â”œâ”€â”€ MovieCard.tsx
+â”‚   â”‚   â”œâ”€â”€ Search.tsx
+â”‚   â”‚   â””â”€â”€ Spinner.tsx
+â”‚   â”œâ”€â”€ pages/
+â”‚   â”‚   â”œâ”€â”€ HomePage.jsx
+â”‚   â”‚   â””â”€â”€ DetailsPage.jsx
+â”‚   â”œâ”€â”€ hooks/
+â”‚   â”‚   â””â”€â”€ useDebounce.js
+â”‚   â”œâ”€â”€ App.css
+â”‚   â”œâ”€â”€ App.jsx
+â”‚   â””â”€â”€ main.tsx
+â”œâ”€â”€ package.json
+â”œâ”€â”€ vite.config.ts
+â””â”€â”€ README.md
 ```
 
 ---
 
-## ðŸ›¡ï¸ **AVAILABLE SCRIPTS**
+## ðŸ›¡ï¸ AVAILABLE SCRIPTS
 
 <div align="center">
 
@@ -271,23 +222,19 @@ CinePeak/
 
 ---
 
-## ðŸ¤ **CONTRIBUTING**
-
-<div align="center">
-  <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="400">
-</div>
+## ðŸ¤ CONTRIBUTING
 
 We welcome contributions from the community! Here's how you can help:
 
-### ðŸŒŸ **How to Contribute**
+### â­ How to Contribute
 
-1. **ðŸ´ Fork** the repository
-2. **ðŸŒ¿ Create** a new branch: `git checkout -b feature/amazing-feature`
-3. **ðŸ’» Make** your changes and commit them: `git commit -m 'Add amazing feature'`
-4. **ðŸ“¤ Push** to the branch: `git push origin feature/amazing-feature`
-5. **ðŸŽ¯ Open** a Pull Request
+1. **Fork** the repository
+2. **Create** a new branch: `git checkout -b feature/amazing-feature`
+3. **Make** your changes and commit them: `git commit -m 'Add amazing feature'`
+4. **Push** to the branch: `git push origin feature/amazing-feature`
+5. **Open** a Pull Request
 
-### ðŸ“ **Contribution Guidelines**
+### ðŸ“ Contribution Guidelines
 
 - Follow the existing code style
 - Write clear commit messages
@@ -297,14 +244,14 @@ We welcome contributions from the community! Here's how you can help:
 
 ---
 
-## ðŸ› **BUG REPORTS & ISSUES**
+## ðŸ› BUG REPORTS & ISSUES
 
 <div align="center">
 
 Found a bug? Have a feature request? 
 
-[![Report Bug](https://img.shields.io/badge/ðŸ›-Report_Bug-FF6B6B?style=for-the-badge)](https://github.com/sayansonu7/CinePeak/issues)
-[![Feature Request](https://img.shields.io/badge/ðŸ’¡-Feature_Request-4ECDC4?style=for-the-badge)](https://github.com/sayansonu7/CinePeak/issues)
+[![Report Bug](https://img.shields.io/badge/Report_Bug-FF6B6B?style=for-the-badge)](https://github.com/sayansonu7/CinePeak/issues)
+[![Feature Request](https://img.shields.io/badge/Feature_Request-4ECDC4?style=for-the-badge)](https://github.com/sayansonu7/CinePeak/issues)
 
 </div>
 
@@ -316,11 +263,11 @@ When reporting issues, please include:
 
 ---
 
-## ðŸ“„ **LICENSE**
+## ðŸ“„ LICENSE
 
 <div align="center">
 
-This project is licensed under the **MIT License** ðŸ“œ
+This project is licensed under the **MIT License**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
@@ -330,39 +277,33 @@ This project is licensed under the **MIT License** ðŸ“œ
 
 ---
 
-## ðŸ“§ **CONTACT & SUPPORT**
+## ðŸ“§ CONTACT & SUPPORT
 
 <div align="center">
 
-### ðŸŒŸ **Connect with the Developer** ðŸŒŸ
+### Connect with the Developer
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sayansonu7)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-email@example.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourprofile)
 
-**Questions? Suggestions? Just want to chat about movies? ðŸŽ¬**
+**Questions? Suggestions? Just want to chat about movies?**
 
 </div>
 
 ---
 
-## ðŸŽ‰ **ACKNOWLEDGMENTS**
+## ðŸŽ‰ ACKNOWLEDGMENTS
 
 <div align="center">
 
 **Special Thanks To:**
 
-ðŸŽ¬ **OMDB API** - For providing comprehensive movie data  
-âš›ï¸ **React Team** - For the amazing framework  
-âš¡ **Vite** - For blazing fast development  
-ðŸŽ¨ **Tailwind CSS** - For beautiful styling utilities  
-ðŸŒŸ **Open Source Community** - For inspiration and support
-
-<br>
-
-<img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" width="50">
-<img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" width="50">
-<img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" width="50">
+**OMDB API** - For providing comprehensive movie data  
+**React Team** - For the amazing framework  
+**Vite** - For blazing fast development  
+**Tailwind CSS** - For beautiful styling utilities  
+**Open Source Community** - For inspiration and support
 
 </div>
 
@@ -370,22 +311,20 @@ This project is licensed under the **MIT License** ðŸ“œ
 
 <div align="center">
 
-## ðŸš€ **Ready to Explore the World of Cinema?**
+## ðŸš€ Ready to Explore the World of Cinema?
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=30&duration=3000&pause=1000&color=FF6B9D&center=true&vCenter=true&width=600&lines=ðŸŽ¬+Star+this+repo+if+you+like+it!+ðŸŒŸ;ðŸ¿+Happy+Movie+Hunting!+ðŸŽ­" alt="Closing Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Roboto&size=30&duration=3000&pause=1000&color=FF6B9D&center=true&vCenter=true&width=600&lines=Star+this+repo+if+you+like+it!;Happy+Movie+Hunting!" alt="Closing Typing SVG" />
 
-### â­ **Don't forget to give this project a star if you found it helpful!** â­
+### â­ Don't forget to give this project a star if you found it helpful! â­
 
 <br>
 
-**Made with â¤ï¸ for movie lovers everywhere! ðŸŽ¬âœ¨**
-
-<img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100">
+**Made with â¤ï¸ for movie lovers everywhere!**
 
 </div>
 
 ---
 
 <div align="center">
-  <sub>ðŸŽ­ Built with passion, powered by creativity, and fueled by countless cups of coffee â˜•</sub>
+  <sub>Built with passion, powered by creativity, and fueled by countless cups of coffee</sub>
 </div>
