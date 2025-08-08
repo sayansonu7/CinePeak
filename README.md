@@ -2,7 +2,13 @@
 
 <div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Roboto&size=40&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&multiline=true&width=600&height=100&lines=Welcome+to+CinePeak;Your+Movie+Discovery+Platform" alt="Typing SVG" />
+  <br><br>
+  <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100">
 </div>
+
+
+
+---
 
 <div align="center">
   
@@ -31,22 +37,17 @@
 
 <table align="center">
 <tr>
-<td align="center" width="50%">
+<td align="center" width="100%">
 
 ### What is CinePeak?
 
 **CinePeak** is a cutting-edge movie discovery platform that brings the magic of cinema to your fingertips! Built with modern web technologies, it offers seamless movie search capabilities powered by the OMDB API.
 
 **Key Features:**
-- ðŸ” **Real-time Search** - Instant movie results
-- â­ **Popular Movies** - Curated trending films
-- ðŸ“± **Responsive Design** - Works on all devices
-- ðŸ“„ **Rich Details** - Ratings, plots, and cast info
-
-</td>
-<td align="center" width="50%">
-
-<img src="https://media.giphy.com/media/l0HlPystfePnAI3G8/giphy.gif" width="300" alt="Movie Animation">
+- **Real-time Search** - Instant movie results
+- **Popular Movies** - Curated trending films
+- **Responsive Design** - Works on all devices
+- **Rich Details** - Ratings, plots, and cast info
 
 </td>
 </tr>
@@ -183,50 +184,67 @@ npm run dev
 
 ```
 CinePeak/
-â”œâ”€â”€ public/
-â”‚   â”œâ”€â”€ CinePeak-full.png
-â”‚   â”œâ”€â”€ cinema.png
-â”‚   â””â”€â”€ Various assets...
-â”œâ”€â”€ src/
-â”‚   â”œâ”€â”€ components/
-â”‚   â”‚   â”œâ”€â”€ MovieCard.tsx
-â”‚   â”‚   â”œâ”€â”€ Search.tsx
-â”‚   â”‚   â””â”€â”€ Spinner.tsx
-â”‚   â”œâ”€â”€ pages/
-â”‚   â”‚   â”œâ”€â”€ HomePage.jsx
-â”‚   â”‚   â””â”€â”€ DetailsPage.jsx
-â”‚   â”œâ”€â”€ hooks/
-â”‚   â”‚   â””â”€â”€ useDebounce.js
-â”‚   â”œâ”€â”€ App.css
-â”‚   â”œâ”€â”€ App.jsx
-â”‚   â””â”€â”€ main.tsx
-â”œâ”€â”€ package.json
-â”œâ”€â”€ vite.config.ts
-â””â”€â”€ README.md
-```
+├── public/
+│   ├── CinePeak-full.png
+│   ├── cinema.png
+│   └── [assets...]
+├── src/
+│   ├── components/
+│   │   ├── MovieCard.tsx
+│   │   ├── Search.tsx
+│   │   └── Spinner.tsx
+│   ├── pages/
+│   │   ├── HomePage.jsx
+│   │   └── DetailsPage.jsx
+│   ├── hooks/
+│   │   └── useDebounce.js
+│   ├── App.css
+│   ├── App.jsx
+│   └── main.tsx
+├── package.json
+├── vite.config.ts
+└── README.md
 
+
+```
+---
+### Workflow
+``` [User]
+   |
+   v
+[App Interface]
+   |
+   v
+[Search & Browse Movies]
+   |
+   v
+[OMDB API]
+   |
+   v
+[Results: Movie Details, Posters]
+```
 ---
 
 ## ðŸ›¡ï¸ AVAILABLE SCRIPTS
 
 <div align="center">
 
-| Command | Action | Description |
-|---------|--------|-------------|
-| `npm run dev` | ðŸš€ | Start development server |
-| `npm run build` | ðŸ“¦ | Build for production |
-| `npm run preview` | ðŸ‘€ | Preview production build |
-| `npm run lint` | ðŸ” | Run ESLint for code quality |
+| Command | Description |
+|---------|----------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` |  Preview production build |
+| `npm run lint` | Run ESLint for code quality |
 
 </div>
 
 ---
 
-## ðŸ¤ CONTRIBUTING
+## CONTRIBUTING
 
 We welcome contributions from the community! Here's how you can help:
 
-### â­ How to Contribute
+### How to Contribute
 
 1. **Fork** the repository
 2. **Create** a new branch: `git checkout -b feature/amazing-feature`
@@ -234,7 +252,7 @@ We welcome contributions from the community! Here's how you can help:
 4. **Push** to the branch: `git push origin feature/amazing-feature`
 5. **Open** a Pull Request
 
-### ðŸ“ Contribution Guidelines
+###  Contribution Guidelines
 
 - Follow the existing code style
 - Write clear commit messages
@@ -244,7 +262,7 @@ We welcome contributions from the community! Here's how you can help:
 
 ---
 
-## ðŸ› BUG REPORTS & ISSUES
+## BUG REPORTS & ISSUES
 
 <div align="center">
 
@@ -256,14 +274,14 @@ Found a bug? Have a feature request?
 </div>
 
 When reporting issues, please include:
-- ðŸ“± Device/Browser information
-- ðŸ” Steps to reproduce
-- ðŸ“¸ Screenshots (if applicable)
-- ðŸ’­ Expected vs actual behavior
+- Device/Browser information
+- Steps to reproduce
+- Screenshots (if applicable)
+- Expected vs actual behavior
 
 ---
 
-## ðŸ“„ LICENSE
+## LICENSE
 
 <div align="center">
 
@@ -277,33 +295,16 @@ This project is licensed under the **MIT License**
 
 ---
 
-## ðŸ“§ CONTACT & SUPPORT
+## CONTACT & SUPPORT
 
 <div align="center">
 
 ### Connect with the Developer
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sayansonu7)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-email@example.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourprofile)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-sayan.professional7@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sayan-pal-969431350)
 
-**Questions? Suggestions? Just want to chat about movies?**
-
-</div>
-
----
-
-## ðŸŽ‰ ACKNOWLEDGMENTS
-
-<div align="center">
-
-**Special Thanks To:**
-
-**OMDB API** - For providing comprehensive movie data  
-**React Team** - For the amazing framework  
-**Vite** - For blazing fast development  
-**Tailwind CSS** - For beautiful styling utilities  
-**Open Source Community** - For inspiration and support
 
 </div>
 
@@ -311,15 +312,15 @@ This project is licensed under the **MIT License**
 
 <div align="center">
 
-## ðŸš€ Ready to Explore the World of Cinema?
+## Ready to Explore the World of Cinema?
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Roboto&size=30&duration=3000&pause=1000&color=FF6B9D&center=true&vCenter=true&width=600&lines=Star+this+repo+if+you+like+it!;Happy+Movie+Hunting!" alt="Closing Typing SVG" />
 
-### â­ Don't forget to give this project a star if you found it helpful! â­
+### Don't forget to give this project a star if you found it helpful! â­
 
 <br>
 
-**Made with â¤ï¸ for movie lovers everywhere!**
+**Made with React for movie lovers everywhere!**
 
 </div>
 
