@@ -638,6 +638,31 @@
     font-size: 0.6rem;
     padding: 0.1rem 0.3rem;
   }
+
+  .track-listing-item {
+    grid-template-columns: auto 1fr; /* Two columns: number, then title/artist/duration */
+    gap: 0.5rem;
+  }
+
+  .track-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .track-listing-item .track-title {
+    font-size: 0.9rem;
+  }
+
+  .track-listing-item .track-artist,
+  .track-listing-item .track-duration {
+    font-size: 0.7rem;
+    margin-left: 0; /* Remove margin pushing duration to right */
+  }
+
+  .track-listing-item .track-duration {
+    text-align: left; /* Align duration to left */
+  }
 }
 
 /* Very Small Mobile (max-width: 360px) */
@@ -695,6 +720,9 @@
 }
 
 /* Utility Classes */
+.grid-cols-auto-fit-min-120 {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
 .gradient-button-transition {
   background: linear-gradient(to right, #3b82f6, #9333ea);
   transition: all 0.3s ease-in-out;
