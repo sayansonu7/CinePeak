@@ -6,71 +6,84 @@ import Spinner from "./components/Spinner.jsx";
 import MovieCard from "./components/MovieCard.jsx";
 import DetailsPage from "./pages/DetailsPage.jsx";
 import { updateSearchCount } from "./appwrite.js";
-import { useEffect, useState, useMemo } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import useDebounce from "./hooks/useDebounce.js";
-import Search from "./components/Search.jsx";
-import Spinner from "./components/Spinner.jsx";
-import MovieCard from "./components/MovieCard.jsx";
-import DetailsPage from "./pages/DetailsPage.jsx";
-import { updateSearchCount } from "./appwrite.js";
 
 const API_BASE_URL = "https://www.omdbapi.com";
 const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
 const popularMovieIds = [
-  "tt32857110", // Bohurupi
-  "tt5180504", // Avatar: The Way of Water
-  "tt5083738", // Superman
-  "tt10954652", // Mickey 17
-
-  "tt1838557", // Companion
-
-  "tt1838561", // Saiyaara
-
-  "tt1838564", // Chhaava
-  "tt1838565", // Housefull 5
-  "tt1838566", // Sky Force
-  "tt1838567", // Mayanagar
-  "tt1745960", // Ballerina
-  "tt10872610", // 28 Years Later
   "tt0111161", // The Shawshank Redemption
   "tt0068646", // The Godfather
-  "tt0468569", // The Dark Knight
   "tt0071562", // The Godfather: Part II
-  "tt0050083", // 12 Angry Men
-  "tt1375666", // Inception
-  "tt0120737", // The Lord of the Rings: The Fellowship of the Ring
+  "tt0468569", // The Dark Knight
+  "tt0167260", // The Lord of the Rings: The Return of the King
   "tt0167261", // The Lord of the Rings: The Two Towers
-  "tt0080684", // Star Wars: Episode V - The Empire Strikes Back
+  "tt0120737", // The Lord of the Rings: The Fellowship of the Ring
   "tt0133093", // The Matrix
+  "tt0080684", // Star Wars: Episode V - The Empire Strikes Back
+  "tt0109830", // Forrest Gump
+  "tt1375666", // Inception
+  "tt0050083", // 12 Angry Men
+  "tt0816692", // Interstellar
+  "tt0060196", // The Good, the Bad and the Ugly
+  "tt0076759", // Star Wars: Episode IV - A New Hope
+  "tt0120815", // Saving Private Ryan
+  "tt0102926", // The Silence of the Lambs
   "tt0099685", // Goodfellas
-
+  "tt0110912", // Pulp Fiction
+  "tt4154796", // Avengers: Endgame
+  "tt4154756", // Avengers: Infinity War
+  "tt0848228", // The Avengers
+  "tt0468569", // The Dark Knight
+  "tt1345836", // The Dark Knight Rises
+  "tt4633694", // Spider-Man: Into the Spider-Verse
+  "tt9362722", // Spider-Man: Across the Spider-Verse
+  "tt10872600", // Spider-Man: No Way Home
+  "tt1375666", // Inception
   "tt0110357", // The Lion King
   "tt0088763", // Back to the Future
   "tt0172495", // Gladiator
-  "tt0047396", // Rear Window
-  "tt1675434", // The Intouchables
-  "tt8108198", // Andhadhun
-
-  "tt15097216", // Jai Bhim
-
+  "tt1392190", // Mad Max: Fury Road
+  "tt2278388", // The Grand Budapest Hotel
+  "tt15398776", // Oppenheimer
+  "tt1745960", // Ballerina
+  "tt12844910", // Mission: Impossible - Dead Reckoning Part One
+  "tt1745969", // John Wick: Chapter 4
+  "tt1630029", // Avatar: The Way of Water
+  "tt2395427", // Avengers: Age of Ultron
+  "tt4633690", // Spider-Man: Homecoming
+  "tt1825683", // Black Panther
+  "tt3896198", // Guardians of the Galaxy Vol. 2
+  "tt0082971", // Raiders of the Lost Ark
+  // Indian cinema (classics + recent/popular)
+  "tt0112870", // Dilwale Dulhania Le Jayenge
+  "tt0292490", // Lagaan
+  "tt0456144", // Rang De Basanti
+  "tt1187043", // 3 Idiots
+  "tt0367110", // Swades
+  "tt2356180", // Queen
+  "tt5074352", // Dangal
+  "tt5959980", // Baahubali 2: The Conclusion
+  "tt8291224", // Andhadhun
+  "tt8178634", // Gully Boy
+  "tt9692750", // Super Deluxe
+  "tt10829692", // Soorarai Pottru
+  "tt11317908", // Jai Bhim
+  "tt1300854", // PK
+  "tt8637428", // Article 15
+  "tt8983202", // Kantara
+  "tt15354916", // RRR
+  "tt2424988", // Drishyam
+  "tt4430212", // Drishyam 2
+  "tt12735488", // Vikram
   "tt15699250", // Hanu Man
   "tt26548265", // Maharaja
-
-  "tt4154796", // Avengers: Endgame
-  "tt4633694", // Spider-Man: Into the Spider-Verse
-  "tt6966692", // Green Book
-
-  "tt4154756", // Avengers: Infinity War
-
-  "tt1392190", // Mad Max: Fury Road
-
-  "tt2278388", // The Grand Budapest Hotel
-  "tt9362722", // Spider-Man: Across the Spider-Verse
-  "tt1745960", // Top Gun: Maverick
-  "tt10872600", // Spider-Man: No Way Home
-  "tt15398776", // Oppenheimer
+  "tt15163628", // Jawan
+  "tt23849204", // Animal
+  "tt12844912", // Pathaan
+  "tt7721946", // Uri: The Surgical Strike
+  "tt8983282", // Tumbbad
+  "tt8176054", // Kantara (Kannada) — alt listing if needed
+  "tt10872610", // 28 Years Later (placeholder upcoming)
   "tt1300115", // The Dark Knight Rises
 ];
 
@@ -79,16 +92,11 @@ const MOVIES_PER_PAGE = 16;
 const App = () => {
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
   const [movieList, setMovieList] = useState([]); // For search results
   const [allPopularMovies, setAllPopularMovies] = useState([]); // For all popular movies
   const [errorMessage, setErrorMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [sortCriteria, setSortCriteria] = useState("default"); // 'default', 'date_desc', 'rating_desc'
-  const [viewMode, setViewMode] = useState("grid"); // 'grid' or 'list'
   const [sortCriteria, setSortCriteria] = useState("default"); // 'default', 'date_desc', 'rating_desc'
   const [viewMode, setViewMode] = useState("grid"); // 'grid' or 'list'
 
@@ -103,7 +111,6 @@ const App = () => {
   useEffect(() => {
     const fetchAllPopularMovies = async () => {
       setIsLoading(true);
-      setErrorMessage("");
       setErrorMessage("");
       try {
         if (!API_KEY || API_KEY.trim() === "" || API_KEY === "undefined") {
@@ -127,12 +134,8 @@ const App = () => {
             }
             const data = await response.json();
             if (data.Response === "True") {
-            if (data.Response === "True") {
               return data;
             } else {
-              console.warn(
-                `OMDB API returned 'False' for popular movie ID ${id}: ${data.Error}`
-              );
               console.warn(
                 `OMDB API returned 'False' for popular movie ID ${id}: ${data.Error}`
               );
@@ -146,15 +149,9 @@ const App = () => {
         const popularMoviesData = (
           await Promise.all(popularMoviesDataPromises)
         ).filter((movie) => movie);
-        const popularMoviesData = (
-          await Promise.all(popularMoviesDataPromises)
-        ).filter((movie) => movie);
         setAllPopularMovies(popularMoviesData);
       } catch (error) {
         console.error(`Error fetching popular movies: ${error}`);
-        setErrorMessage(
-          `Error fetching popular movies: ${error.message}. Please try again later.`
-        );
         setErrorMessage(
           `Error fetching popular movies: ${error.message}. Please try again later.`
         );
@@ -174,16 +171,12 @@ const App = () => {
       }
       setIsLoading(true);
       setErrorMessage("");
-      setErrorMessage("");
       setMovieList([]);
       try {
         if (!API_KEY || API_KEY.trim() === "" || API_KEY === "undefined") {
           setErrorMessage("OMDB API Key is not configured.");
           return;
         }
-        const endpoint = `${API_BASE_URL}/?s=${encodeURIComponent(
-          query
-        )}&apikey=${API_KEY}`;
         const endpoint = `${API_BASE_URL}/?s=${encodeURIComponent(
           query
         )}&apikey=${API_KEY}`;
@@ -197,8 +190,6 @@ const App = () => {
           );
         }
         const data = await response.json();
-        if (data.Response === "False") {
-          setErrorMessage(data.Error || "No movies found for your search.");
         if (data.Response === "False") {
           setErrorMessage(data.Error || "No movies found for your search.");
           setMovieList([]);
@@ -239,56 +230,15 @@ const App = () => {
               }
             }
           );
-          const detailedMoviesPromises = data.Search.map(
-            async (searchResultMovie) => {
-              const detailEndpoint = `${API_BASE_URL}/?i=${searchResultMovie.imdbID}&apikey=${API_KEY}`;
-              try {
-                const detailResponse = await fetch(detailEndpoint);
-                if (!detailResponse.ok) {
-                  console.warn(
-                    `Failed to fetch details for movie ID ${searchResultMovie.imdbID}: ${detailResponse.statusText}`
-                  );
-                  return {
-                    ...searchResultMovie,
-                    imdbRating: "N/A",
-                    Language: "N/A",
-                  };
-                }
-                const detailData = await detailResponse.json();
-                return detailData.Response === "True"
-                  ? detailData
-                  : {
-                      ...searchResultMovie,
-                      imdbRating: "N/A",
-                      Language: "N/A",
-                    };
-              } catch (error) {
-                console.error(
-                  `Error fetching details for movie ID ${searchResultMovie.imdbID}:`,
-                  error
-                );
-                return {
-                  ...searchResultMovie,
-                  imdbRating: "N/A",
-                  Language: "N/A",
-                };
-              }
-            }
-          );
           const detailedMovies = await Promise.all(detailedMoviesPromises);
-          setMovieList(detailedMovies.filter((movie) => movie));
           setMovieList(detailedMovies.filter((movie) => movie));
           updateSearchCount();
         } else {
           setMovieList([]);
           setErrorMessage("No movies found for your search.");
-          setErrorMessage("No movies found for your search.");
         }
       } catch (error) {
         console.error(`Error fetching movies: ${error}`);
-        setErrorMessage(
-          `Error fetching movies: ${error.message}. Please try again later.`
-        );
         setErrorMessage(
           `Error fetching movies: ${error.message}. Please try again later.`
         );
@@ -304,7 +254,6 @@ const App = () => {
     const listToSort = debouncedSearchTerm ? movieList : allPopularMovies;
     let sorted = [...listToSort];
     if (sortCriteria === "date_desc") {
-    if (sortCriteria === "date_desc") {
       sorted.sort((a, b) => {
         const yearA = parseInt(a.Year, 10);
         const yearB = parseInt(b.Year, 10);
@@ -312,7 +261,6 @@ const App = () => {
         if (isNaN(yearB)) return -1;
         return yearB - yearA;
       });
-    } else if (sortCriteria === "rating_desc") {
     } else if (sortCriteria === "rating_desc") {
       sorted.sort((a, b) => {
         const ratingA = a.imdbRating === "N/A" ? -1 : parseFloat(a.imdbRating);
@@ -327,21 +275,37 @@ const App = () => {
     return sorted;
   }, [movieList, allPopularMovies, sortCriteria, debouncedSearchTerm]);
 
-  const totalPages = debouncedSearchTerm
-    ? 1
-    : Math.ceil(sortedList.length / MOVIES_PER_PAGE);
-
-  const totalPages = debouncedSearchTerm
-    ? 1
-    : Math.ceil(sortedList.length / MOVIES_PER_PAGE);
+  const totalPages = useMemo(() => {
+    if (debouncedSearchTerm) {
+      return 1;
+    }
+    const moviesWithPosters = sortedList.filter(
+      (movie) => movie.Poster && movie.Poster !== "N/A"
+    );
+    const moviesWithoutPosters = sortedList.filter(
+      (movie) => !movie.Poster || movie.Poster === "N/A"
+    );
+    const reorderedList = [...moviesWithPosters, ...moviesWithoutPosters];
+    return Math.ceil(reorderedList.length / MOVIES_PER_PAGE);
+  }, [sortedList, debouncedSearchTerm]);
 
   const paginatedList = useMemo(() => {
     if (debouncedSearchTerm) {
       return sortedList;
     }
+
+    const moviesWithPosters = sortedList.filter(
+      (movie) => movie.Poster && movie.Poster !== "N/A"
+    );
+    const moviesWithoutPosters = sortedList.filter(
+      (movie) => !movie.Poster || movie.Poster === "N/A"
+    );
+
+    const reorderedList = [...moviesWithPosters, ...moviesWithoutPosters];
+
     const startIndex = (currentPage - 1) * MOVIES_PER_PAGE;
     const endIndex = startIndex + MOVIES_PER_PAGE;
-    return sortedList.slice(startIndex, endIndex);
+    return reorderedList.slice(startIndex, endIndex);
   }, [sortedList, currentPage, debouncedSearchTerm]);
 
   const handlePageChange = (newPage) => {
@@ -366,8 +330,9 @@ const App = () => {
               <div className="wrapper">
                 <header>
                   <h1>
-                    Discover Your Next 
-                    <span className="text-gradient"> Favorite Movie </span> in Seconds
+                    Discover Your Next
+                    <span className="text-gradient"> Favorite Movie </span> in
+                    Seconds
                   </h1>
                   <Search
                     searchTerm={searchTerm}
@@ -517,4 +482,3 @@ const App = () => {
 };
 
 export default App;
-
