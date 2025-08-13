@@ -32,7 +32,7 @@
 
   --breakpoint-xs: 480px;
 
-  --background-image-hero-pattern: url("/hero-bg.PNG");
+  --background-image-hero-pattern: url("/hero-bg.png");
 }
 
 @layer base {
@@ -144,7 +144,9 @@
     }
 
     & .rating p {
-      @apply font-bold text-base text-white;
+      font-weight: bold;
+      font-size: 1rem;
+      color: white;
     }
 
     & .content span {
