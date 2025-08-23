@@ -23,9 +23,18 @@
   [![GitHub Stars](https://img.shields.io/github/stars/sayansonu7/CinePeak?style=for-the-badge&logo=github&logoColor=white&labelColor=000000&color=00D4FF)](https://github.com/sayansonu7/CinePeak/stargazers)
   [![GitHub Forks](https://img.shields.io/github/forks/sayansonu7/CinePeak?style=for-the-badge&logo=github&logoColor=white&labelColor=000000&color=FF6B9D)](https://github.com/sayansonu7/CinePeak/network)
   [![GitHub Issues](https://img.shields.io/github/issues/sayansonu7/CinePeak?style=for-the-badge&logo=github&logoColor=white&labelColor=000000&color=FFC107)](https://github.com/sayansonu7/CinePeak/issues)
+ 
+  
 
 </div>
-<a href="https://cinepeak-7.netlify.app/" style="color:purple; font-weight:bold; text-decoration:none;">Check it Live!</a>
+
+<div align="center">
+
+[![Check it Live!](https://img.shields.io/badge/Check_it_Live!-purple?style=for-the-badge)](https://cinepeak-7.netlify.app/)
+
+  
+</div>
+
 
 ---
 
