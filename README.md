@@ -24,7 +24,7 @@
   [![GitHub Forks](https://img.shields.io/github/forks/sayansonu7/CinePeak?style=for-the-badge&logo=github&logoColor=white&labelColor=000000&color=FF6B9D)](https://github.com/sayansonu7/CinePeak/network)
   [![GitHub Issues](https://img.shields.io/github/issues/sayansonu7/CinePeak?style=for-the-badge&logo=github&logoColor=white&labelColor=000000&color=FFC107)](https://github.com/sayansonu7/CinePeak/issues)
  
-  
+<br><br>  
 
 </div>
 
