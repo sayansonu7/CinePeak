@@ -18,6 +18,7 @@
   <img src="https://img.shields.io/badge/TailwindCSS-4.1-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white&labelColor=000000&color=06B6D4">
   
   <br><br>
+  [Check it Live!](https:cinepeak-7.netlify.app)
   
   [![GitHub Stars](https://img.shields.io/github/stars/sayansonu7/CinePeak?style=for-the-badge&logo=github&logoColor=white&labelColor=000000&color=00D4FF)](https://github.com/sayansonu7/CinePeak/stargazers)
   [![GitHub Forks](https://img.shields.io/github/forks/sayansonu7/CinePeak?style=for-the-badge&logo=github&logoColor=white&labelColor=000000&color=FF6B9D)](https://github.com/sayansonu7/CinePeak/network)
