@@ -1,7 +1,8 @@
+<div align="center" class="color=A020F0">
 # CinePeak - Movie Discovery Platform
-
+</div>
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Roboto&size=40&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&multiline=true&width=600&height=100&lines=Welcome+to+CinePeak;" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Roboto&size=40&duration=3000&pause=500&color=00D4FF&center=true&vCenter=true&multiline=true&width=600&height=100&lines=Welcome+to+CinePeak;" alt="Typing SVG" />
   <br><br>
   <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100">
 </div>
