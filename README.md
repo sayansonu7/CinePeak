@@ -30,7 +30,8 @@
 
 <div align="center">
 
-[![Check it Live!](https://img.shields.io/badge/Check_it_Live!-purple?style=for-the-badge)](https://cinepeak-7.netlify.app/)
+[![Check it Live!](https://img.shields.io/badge/Check_it_Live!-purple?style=plastic&logoWidth=20)](https://cinepeak-7.netlify.app/)
+
 
   
 </div>
