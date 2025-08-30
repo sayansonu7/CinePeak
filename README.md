@@ -1,7 +1,7 @@
 # CinePeak - Movie Discovery Platform
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Roboto&size=40&duration=3000&pause=1000&color=00D4FF&center=true&vCenter=true&multiline=true&width=600&height=100&lines=Welcome+to+CinePeak;" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Roboto&size=40&duration=3000&pause=500&color=00D4FF&center=true&vCenter=true&multiline=true&width=600&height=100&lines=Welcome+to+CinePeak;" alt="Typing SVG" />
   <br><br>
   <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100">
 </div>
@@ -17,9 +17,18 @@
   
   <br><br>
   
+  
   [![GitHub Stars](https://img.shields.io/github/stars/sayansonu7/CinePeak?style=for-the-badge&logo=github&logoColor=white&labelColor=000000&color=00D4FF)](https://github.com/sayansonu7/CinePeak/stargazers)
   [![GitHub Forks](https://img.shields.io/github/forks/sayansonu7/CinePeak?style=for-the-badge&logo=github&logoColor=white&labelColor=000000&color=FF6B9D)](https://github.com/sayansonu7/CinePeak/network)
   [![GitHub Issues](https://img.shields.io/github/issues/sayansonu7/CinePeak?style=for-the-badge&logo=github&logoColor=white&labelColor=000000&color=FFC107)](https://github.com/sayansonu7/CinePeak/issues)
+ 
+<br><br>
+
+</div>
+
+<div align="center">
+
+[![👉 Check it Live!](https://img.shields.io/badge/Check_it_Live!-purple?style=for-the-badge&width=20)](https://cinepeak-7.netlify.app/)
 
 </div>
 

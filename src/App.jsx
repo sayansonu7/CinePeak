@@ -22,12 +22,14 @@ const popularMovieIds = [
   "tt0080684", // Star Wars: Episode V - The Empire Strikes Back
   "tt0109830", // Forrest Gump
   "tt1375666", // Inception
+  "tt0050083", // 12 Angry Men
   "tt0816692", // Interstellar
   "tt0060196", // The Good, the Bad and the Ugly
   "tt0076759", // Star Wars: Episode IV - A New Hope
   "tt0120815", // Saving Private Ryan
   "tt0102926", // The Silence of the Lambs
   "tt0099685", // Goodfellas
+  "tt0110912", // Pulp Fiction
   "tt4154796", // Avengers: Endgame
   "tt4154756", // Avengers: Infinity War
   "tt0848228", // The Avengers
